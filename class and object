@@ -1,0 +1,16 @@
+class Family:
+    def __init__(self,name,age,gender,aadhar_no,city):
+        self.name = name
+        self.age = age
+        self.gender = gender
+        self.aadhar_no = aadhar_no
+        self.city = city
+    def address (self):
+        add = f" Name :{ self.name}\n Age :{self.age} \n Gender : {self.gender}\n AadharNO :{self.aadhar_no}\n City : {self.city}"
+        return add
+
+person1= Family('Gowshick',19,'Male',123456789012,'Anthiyur')
+person2= Family('Pushpa',46,'Female',123456789023,'Anthiyur')
+
+print (person1.address())
+print (person2.address())
