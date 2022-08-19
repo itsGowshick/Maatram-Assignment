@@ -1,0 +1,46 @@
+
+from datetime import date
+
+class Bank:
+
+    def __init__(self,name,dob,gender,account_no,city):
+        self.name = name
+        self.dob = dob
+        self.gender = gender
+        self.account_no = account_no
+        self.city = city
+    def address (self):
+        add = f" Name :{ self.name}\n DOB :{self.dob} \n Gender : {self.gender}\n Account_No :{self.account_no}\n City : {self.city}"
+        return add
+
+    def year (self):
+        current_year = date.today().year
+        age = current_year - self.dob
+        return age
+
+    def payment_balance (self):
+        loan = 15000
+        balance = loan - b
+        return balance
+
+person1= Bank('Gowshick',2003,'Male',1234567890125,'Anthiyur')
+person2= Bank('Pushpa',1976,'Female',1234567890238,'Anthiyur')
+
+a = int(input("Enter Account No : "))
+
+if a == 1234567890125:
+    print(person1.address())
+    print("Age:",person1.year())
+elif a == 1234567890238 :
+    print(person2.address())
+    print("Age:",person2.year())
+else :
+    print("Invalid Account No")
+
+b = int(input("Amount payed : "))
+print("Balance Amount :", person1.payment_balance())
+
+
+
+
+
