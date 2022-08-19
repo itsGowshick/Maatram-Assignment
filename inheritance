@@ -1,0 +1,59 @@
+class Person:
+    def __init__(self,name,dob,gender):
+        self.name = name
+        self.dob = dob
+        self.gender = gender
+
+    def age(self):
+        year = date.today().year - self.dob
+        return year
+
+class Bank(Person):
+    def __init__(self, name, dob, gender, city):
+        super().__init__(name, dob, gender)
+        self.city = city
+
+class Employee(Bank):
+    def __init__(self, name, dob, gender, city,salary):
+        super().__init__(name, dob, gender,city)
+        self.salary = salary
+
+    def address1 (self):
+        add = f" Name :{ self.name}\n DOB :{self.dob} \n Gender : {self.gender}\n City : {self.city}\n Salary Amount :{self.salary}"
+        return add
+
+emp1 = Employee('Karthik',1996,'Male','Chennai',50000)
+
+class Public(Bank):
+    def __init__(self, name, dob, gender, city,loan):
+        super().__init__(name, dob, gender,city)
+        self.loan = loan
+
+    def address2 (self):
+        add = f" Name :{ self.name}\n DOB :{self.dob} \n Gender : {self.gender}\n City : {self.city}\n Loan Amount :{self.loan}"
+        return add
+
+pub1 = Public('Suriya',1975,'Male','Erode',40000)
+pub2 = Public('Jyotika',1982,'Female','Coimbatore',30000)
+
+a = str(input("Public or Employee:"))
+if a == 'Public':
+    b = str(input("Name:"))
+    if b == 'Suriya':
+        print(pub1.address2())
+    elif b == 'Jyotika':
+        print(pub2.address2())
+    else:
+        print("*****Invalid Name*****")
+
+else :
+    c = str(input("Name:"))
+    if c == 'Karthik':
+        print(emp1.address1())
+    else:
+        print("*****Invalid Name*****")
+
+
+
+
+
